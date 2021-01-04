@@ -3,11 +3,26 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import NotFound from '../components/404.vue'
 import Login from '../views/login.vue'
+import Cookies from 'js-cookie'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'// Progress 进度条样式
+
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push (location, onResolve, onReject) {
+  if (onResolve || onReject) return originalPush.call(this, location, onResolve, onReject)
+  return originalPush.call(this, location).catch(err => err)
+}
+
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
+    redirect: '/home'
+
+  },
+  {
+    path: '/home',
     name: 'Home',
     component: Home
   },
@@ -15,14 +30,6 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
     path: '*',
@@ -36,4 +43,20 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  NProgress.start()// 开始Progress
+  if (to.path === '/login') {
+    next()
+  } else {
+    if (Cookies.get('DianShan')) {
+      next()
+    } else {
+      next('/login')
+    }
+  }
+})
+
+router.afterEach((to, from) => {
+  NProgress.done() // 结束Progress
+})
 export default router

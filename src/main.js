@@ -9,6 +9,9 @@ Vue.config.productionTip = false
 
 Vue.use(Element)
 
+const { mockXHR } = require('../mock')
+mockXHR()
+
 new Vue({
   router,
   store,
