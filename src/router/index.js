@@ -2,7 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import NotFound from '../components/404.vue'
+import Welcome from '../views/welcome.vue'
 import Login from '../views/login.vue'
+
+import Users from '../views/user/users.vue'
+
 import Cookies from 'js-cookie'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'// Progress 进度条样式
@@ -24,7 +28,12 @@ const routes = [
   {
     path: '/home',
     name: 'Home',
-    component: Home
+    component: Home,
+    redirect: '/welcome',
+    children: [
+      { path: '/welcome', name: 'Welcome', component: Welcome },
+      { path: '/users', name: 'Users', component: Users }
+    ]
   },
   {
     path: '/login',

@@ -92,8 +92,8 @@ export default {
     }
     return {
       LoginData: {
-        username: '',
-        password: '',
+        username: 'admin',
+        password: '123456',
         verifycode: ''
       },
       passwordType: 'password',
