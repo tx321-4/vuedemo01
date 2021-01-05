@@ -6,6 +6,8 @@ import Welcome from '../views/welcome.vue'
 import Login from '../views/login.vue'
 
 import Users from '../views/user/users.vue'
+import Rights from '../views/role/rights.vue'
+import Roles from '../views/role/roles.vue'
 
 import Cookies from 'js-cookie'
 import NProgress from 'nprogress'
@@ -32,7 +34,9 @@ const routes = [
     redirect: '/welcome',
     children: [
       { path: '/welcome', name: 'Welcome', component: Welcome },
-      { path: '/users', name: 'Users', component: Users }
+      { path: '/users', name: 'Users', component: Users }, // 用户列表
+      { path: '/rights', name: 'Rights', component: Rights }, // 权限列表
+      { path: '/roles', name: 'Roles', component: Roles } // 角色列表
     ]
   },
   {

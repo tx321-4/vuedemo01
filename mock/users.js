@@ -6,9 +6,10 @@ for (let i = 0; i < count; i++) {
   List.push(Mock.mock({
     id: '@increment',
     username: '@cname',
+    password: /[a-zA-Z0-9]{6,15}/,
     'role_name|1': ['访问者', '管理员', '超级管理员', '编辑员'],
     email: '@email',
-    mobile: /1(\d[0-9]{10})/,
+    mobile: /1(\d[0-9]{9})/,
     'mg_state|1': [true, false],
     create_time: '@datetime',
     update_time: '@datetime'
@@ -32,6 +33,36 @@ export default [
         list: pageList,
         total: mockList.length,
         msg: '获取列表成功'
+      }
+    }
+  },
+  {
+    url: '/users/edit/state',
+    type: 'post',
+    response: config => {
+      return {
+        code: 200,
+        msg: '修改成功'
+      }
+    }
+  },
+  {
+    url: '/users/save',
+    type: 'post',
+    response: config => {
+      return {
+        code: 200,
+        msg: '保存成功'
+      }
+    }
+  },
+  {
+    url: '/users/del',
+    type: 'get',
+    response: config => {
+      return {
+        code: 200,
+        msg: '删除成功'
       }
     }
   }

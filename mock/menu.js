@@ -17,12 +17,12 @@ const List = [
       {
         id: '151',
         authName: '角色列表',
-        path: ''
+        path: 'roles'
       },
       {
         id: '152',
         authName: '权限列表',
-        path: ''
+        path: 'rights'
       }
     ]
   },
