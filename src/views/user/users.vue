@@ -78,6 +78,7 @@
                 type="warning"
                 size="mini"
                 icon="el-icon-setting"
+                @click="setRole(row)"
               ></el-button>
             </el-tooltip>
           </template>
@@ -92,6 +93,33 @@
       />
     </el-card>
     <edit-dialog ref="editDialog" @updated="reload"></edit-dialog>
+    <el-dialog
+      title="分配角色"
+      :visible.sync="setRoleShow"
+      width="50%"
+      @close="setRoleDialogClosed"
+    >
+      <div>
+        <p>当前的用户：{{ userInfo.username }}</p>
+        <p>当前的角色：{{ userInfo.role_name }}</p>
+        <p>
+          分配新角色：
+          <el-select v-model="selectedRoleId" placeholder="请选择" clearable>
+            <el-option
+              v-for="item in rolesList"
+              :key="item.id"
+              :label="item.roleName"
+              :value="item.id"
+            >
+            </el-option>
+          </el-select>
+        </p>
+      </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="setRoleShow = false">取 消</el-button>
+        <el-button type="primary" @click="editUserInfo">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -112,7 +140,11 @@ export default {
         page: 1, // 当前页
         limit: 20 // 分页大小
       },
-      loading: false
+      loading: false,
+      setRoleShow: false,
+      rolesList: [], // 所有角色列表数组
+      userInfo: {},
+      selectedRoleId: '' // 已选中的角色id值
     }
   },
   created () {
@@ -198,6 +230,25 @@ export default {
       } else {
         this.userList.unshift(data)
       }
+    },
+    setRole (userInfo) {
+      // console.log(userInfo)
+      this.userInfo = userInfo
+      api.getRoles().then((res) => {
+        this.rolesList = res.list
+      })
+      this.setRoleShow = true
+    },
+    editUserInfo () {
+      if (!this.selectedRoleId) {
+        return this.$message.error('请选择要分配的角色')
+      }
+      this.$message.success('分配角色成功！')
+    },
+    // 监听 分配角色对话框的关闭事件
+    setRoleDialogClosed () {
+      this.selectedRoleId = ''
+      this.userInfo = {}
     }
   }
 }

@@ -135,7 +135,7 @@
                 type="warning"
                 size="mini"
                 icon="el-icon-setting"
-                @click="createRights(scope.row.id)"
+                @click="createRights(row)"
                 >分配权限</el-button
               >
             </el-tooltip>
@@ -172,7 +172,8 @@ export default {
         page: 1, // 当前页
         limit: 20 // 分页大小
       },
-      loading: false
+      loading: false,
+      defKeys: []// 权限的id
     }
   },
   created () {
@@ -278,10 +279,23 @@ export default {
     },
 
     // 打开分配权限弹窗
-    createRights (id) {
+    createRights (role) {
       this.$refs.editTree.open().then(that => {
-
+        api.getRightree(role.id).then((res) => {
+          this.getLeafKeys(role, this.defKeys)
+          that.initData({ rightsList: res.list, defKeys: this.defKeys })
+        })
       })
+    },
+    // 通过递归的形式，获取角色下所有三级权限的id，并保存到defKeys数组中
+    getLeafKeys (node, arr) { // 节点 数组
+      // 如果当前node节点不包含children属性，则是三级权限节点
+      if (!node.children) {
+        return arr.push(node.id)
+      }
+      // 循环node里的children数组，每循环一项拿到一个子节点item，在根据item再次调用递归函数getLeafKeys，
+      // 然后把当前的item当做一个节点传进去，同时把arr传进去。只要递归完毕后，就把三级节点的id都保存到arr了
+      node.children.forEach(item => this.getLeafKeys(item, arr))
     }
 
   }

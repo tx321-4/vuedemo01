@@ -27,5 +27,12 @@ export default {
       method: 'get',
       params
     })
+  },
+  getRoles () {
+    return request({
+      url: '/users/roles',
+      method: 'get'
+
+    })
   }
 }

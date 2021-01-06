@@ -24,12 +24,12 @@
           <el-input v-model.trim="form.roleDesc"></el-input>
         </el-form-item>
       </el-form>
-      <div slot="footer" v-loading="loading">
-        <el-button type="primary" @click="save(0)" :loading="loading"
-          >保存</el-button
-        >
-        <el-button @click="show = false">关 闭</el-button>
-      </div>
+    </div>
+    <div slot="footer" v-loading="loading">
+      <el-button type="primary" @click="save(0)" :loading="loading"
+        >保存</el-button
+      >
+      <el-button @click="show = false">关 闭</el-button>
     </div>
   </el-dialog>
 </template>

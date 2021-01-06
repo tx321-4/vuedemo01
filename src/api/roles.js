@@ -34,6 +34,13 @@ export default {
       method: 'get',
       params
     })
+  },
+  getRightree () {
+    return request({
+      url: '/roles/rightstree',
+      method: 'get'
+
+    })
   }
 
 }

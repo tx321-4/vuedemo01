@@ -65,5 +65,46 @@ export default [
         msg: '删除成功'
       }
     }
+  },
+  {
+    url: '/users/roles',
+    type: 'get',
+    response: config => {
+      return {
+        code: 200,
+        list: [
+          {
+            id: 1,
+            roleName: '访问者'
+          },
+          {
+            id: 2,
+            roleName: '管理员'
+          },
+          {
+            id: 3,
+            roleName: '超级管理员'
+          },
+          {
+            id: 4,
+            roleName: '编辑员'
+          },
+          {
+            id: 5,
+            roleName: '访问者'
+          },
+          {
+            id: 6,
+            roleName: '超级管理员'
+          },
+          {
+            id: 7,
+            roleName: '编辑员'
+          }
+        ],
+
+        msg: '获取列表成功'
+      }
+    }
   }
 ]
