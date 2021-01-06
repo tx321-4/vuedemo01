@@ -5,11 +5,13 @@ import auth from './auth'
 import menu from './menu'
 import users from './users'
 import rights from './rights'
+import roles from './roles'
 const mocks = [
   ...auth,
   ...menu,
   ...users,
-  ...rights
+  ...rights,
+  ...roles
 ]
 
 // for front mock

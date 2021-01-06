@@ -42,6 +42,12 @@ const List = [
     level: 1
   },
   {
+    id: '156',
+    authName: '添加商品',
+    path: 'goods',
+    level: 2
+  },
+  {
     id: '154',
     authName: '分类参数',
     path: 'goods',
@@ -64,6 +70,12 @@ const List = [
     authName: '订单列表',
     path: 'orders',
     level: 1
+  },
+  {
+    id: '157',
+    authName: '添加订单',
+    path: 'orders',
+    level: 2
   },
   {
     id: '145',
