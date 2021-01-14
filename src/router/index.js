@@ -8,6 +8,7 @@ import Login from '../views/login.vue'
 import Users from '../views/user/users.vue'
 import Rights from '../views/role/rights.vue'
 import Roles from '../views/role/roles.vue'
+import Cate from '../views/goods/cate.vue'
 
 import Cookies from 'js-cookie'
 import NProgress from 'nprogress'
@@ -36,7 +37,8 @@ const routes = [
       { path: '/welcome', name: 'Welcome', component: Welcome },
       { path: '/users', name: 'Users', component: Users }, // 用户列表
       { path: '/rights', name: 'Rights', component: Rights }, // 权限列表
-      { path: '/roles', name: 'Roles', component: Roles } // 角色列表
+      { path: '/roles', name: 'Roles', component: Roles }, // 角色列表
+      { path: '/categories', name: 'Categories', component: Cate } // 商品分类
     ]
   },
   {

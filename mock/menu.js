@@ -43,7 +43,7 @@ const List = [
       {
         id: '155',
         authName: '商品分类',
-        path: ''
+        path: 'categories'
       }
     ]
   },

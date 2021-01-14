@@ -21,6 +21,7 @@
             :collapse="isCollapse"
             :collapse-transition="false"
             :router="true"
+            :default-active="$route.path"
           >
             <el-submenu
               :index="item.id + ''"
