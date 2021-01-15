@@ -10,7 +10,7 @@ function resolve (dir) {
 
 module.exports = {
   outputDir: 'dist',
-  publicPath: isProduction ? '/' : '',
+  publicPath: isProduction ? '' : '',
   productionSourceMap: false, // 关闭打包.map
   lintOnSave: false, // 关闭eslint规范
   // 设置页面title
