@@ -27,6 +27,7 @@ const user = {
     },
     logout ({ commit }) {
       removeToken()
+      window.location.reload()
     }
   }
 }

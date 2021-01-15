@@ -2,7 +2,7 @@
   <div class="login-container">
     <div class="login_box">
       <div class="logo">
-        <img src="assets/logo.png" alt="" />
+        <img src="../assets/logo.png" alt="" />
       </div>
       <el-form
         :model="LoginData"
@@ -143,7 +143,6 @@ export default {
           this.loading = true
           this.$store.dispatch('login', this.LoginData).then(() => {
             this.loading = false
-            this.$router.push({ path: '/home' })
           }).catch(() => {
             this.loading = false
           })
