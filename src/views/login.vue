@@ -2,7 +2,7 @@
   <div class="login-container">
     <div class="login_box">
       <div class="logo">
-        <img src="../assets/logo.png" alt="" />
+        <img src="assets/logo.png" alt="" />
       </div>
       <el-form
         :model="LoginData"
