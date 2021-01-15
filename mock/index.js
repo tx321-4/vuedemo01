@@ -7,13 +7,15 @@ import users from './users'
 import rights from './rights'
 import roles from './roles'
 import cate from './cate'
+import order from './order'
 const mocks = [
   ...auth,
   ...menu,
   ...users,
   ...rights,
   ...roles,
-  ...cate
+  ...cate,
+  ...order
 ]
 
 // for front mock

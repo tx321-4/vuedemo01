@@ -54,7 +54,7 @@ const List = [
       {
         id: '156',
         authName: '订单列表',
-        path: ''
+        path: 'orders'
       }
     ]
   },
@@ -65,7 +65,7 @@ const List = [
       {
         id: '157',
         authName: '数据报表',
-        path: ''
+        path: 'reports'
       }
     ]
   }
