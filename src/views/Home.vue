@@ -86,7 +86,9 @@ export default {
       })
     },
     logout () {
-      this.$store.dispatch('logout', this.LoginData).then(() => { }).catch((err) => {
+      this.$store.dispatch('logout', this.LoginData).then(() => {
+        this.$router.push({ path: '/login' })
+      }).catch((err) => {
         console.log(err)
       })
     }
