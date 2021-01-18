@@ -143,6 +143,7 @@ export default {
           this.loading = true
           this.$store.dispatch('login', this.LoginData).then(() => {
             this.loading = false
+            this.$router.push({ path: '/' })
           }).catch(() => {
             this.loading = false
           })

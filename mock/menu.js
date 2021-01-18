@@ -38,7 +38,7 @@ const List = [
       {
         id: '154',
         authName: '分类参数',
-        path: ''
+        path: 'params'
       },
       {
         id: '155',
