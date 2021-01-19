@@ -33,7 +33,7 @@ const List = [
       {
         id: '153',
         authName: '商品列表',
-        path: ''
+        path: 'goods'
       },
       {
         id: '154',

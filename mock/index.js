@@ -9,6 +9,7 @@ import roles from './roles'
 import cate from './cate'
 import order from './order'
 import params from './params'
+import goods from './goods'
 const mocks = [
   ...auth,
   ...menu,
@@ -16,6 +17,7 @@ const mocks = [
   ...rights,
   ...roles,
   ...cate,
+  ...goods,
   ...order,
   ...params
 ]
