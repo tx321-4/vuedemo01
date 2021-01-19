@@ -10,6 +10,7 @@ import cate from './cate'
 import order from './order'
 import params from './params'
 import goods from './goods'
+import upload from './upload'
 const mocks = [
   ...auth,
   ...menu,
@@ -19,7 +20,8 @@ const mocks = [
   ...cate,
   ...goods,
   ...order,
-  ...params
+  ...params,
+  ...upload
 ]
 
 // for front mock

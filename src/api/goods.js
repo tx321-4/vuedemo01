@@ -15,6 +15,13 @@ export default {
       data
     })
   },
+  Goodsave (data) {
+    return request({
+      url: '/goods/save2',
+      method: 'post',
+      data
+    })
+  },
   del (params) {
     return request({
       url: '/goods/del',

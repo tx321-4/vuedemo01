@@ -116,7 +116,7 @@ export default {
       })
     },
     create () {
-
+      this.$router.push('goods/add')
     },
     edit (row) {
       this.$refs.editDialog.open().then(that => {

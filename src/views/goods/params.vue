@@ -235,7 +235,7 @@ export default {
         return
       }
       // 证明选中的是三级分类
-      // console.log(this.selectedCateKeys)
+      console.log(this.selectedCateKeys)
       this.getParamsList()
     },
     // tab标签的点击事件处理函数

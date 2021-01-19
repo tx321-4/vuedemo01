@@ -11,6 +11,7 @@ import Roles from '../views/role/roles.vue'
 import Cate from '../views/goods/cate.vue'
 import Params from '../views/goods/params.vue'
 import List from '../views/goods/list.vue'
+import Add from '../views/goods/add.vue'
 import Order from '../views/order/order.vue'
 import Report from '../views/report/report.vue'
 import Cookies from 'js-cookie'
@@ -44,6 +45,7 @@ const routes = [
       { path: '/categories', name: 'Categories', component: Cate }, // 商品分类
       { path: '/params', name: 'Params', component: Params }, // 分类参数
       { path: '/goods', component: List }, // 商品列表
+      { path: '/goods/add', component: Add }, // 添加商品
       { path: '/orders', component: Order }, // 订单列表
       { path: '/reports', name: 'Report', component: Report } // 数据报表
     ]

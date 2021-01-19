@@ -49,6 +49,16 @@ export default [
     }
   },
   {
+    url: '/goods/save2',
+    type: 'post',
+    response: config => {
+      return {
+        code: 200,
+        msg: '保存成功'
+      }
+    }
+  },
+  {
     url: '/goods/del',
     type: 'get',
     response: config => {

@@ -10,27 +10,28 @@ const List = [
     id: 5,
     attr_name: '尺寸',
     sel: 'many',
-    attr_vals: ''
+    attr_vals: '16   20 32 40'
+
   },
   {
     id: 2,
     attr_name: '主体-商品名称',
     sel: 'only',
-    attr_vals: ''
+    attr_vals: 'TCL 电视'
 
   },
   {
     id: 3,
     attr_name: '显示-曲面',
     sel: 'only',
-    attr_vals: ''
+    attr_vals: '是 否'
 
   },
   {
     id: 4,
     attr_name: '系统-智能电视',
     sel: 'only',
-    attr_vals: ''
+    attr_vals: '智能电视'
 
   }
 ]
