@@ -41,7 +41,7 @@ vue 电商管理系统，主要用于学习、完善vue前端开发电商系统�
   * 订单 【修改】、【物流】
 * 数据统计
   * 报表
-  * 
+
 ## Project setup
 ```
 yarn install
