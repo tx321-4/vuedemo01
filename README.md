@@ -1,4 +1,4 @@
-# vuedemo01
+# Vue电商管理系统
 
 [线上Demo](http://sp.liumianti.top)
 
